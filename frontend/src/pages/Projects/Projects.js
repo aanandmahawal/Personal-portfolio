@@ -1,6 +1,6 @@
 import React from "react";
 import "./Projects.css";
-import Spin from "react-reveal/Spin";
+import Fade from "react-reveal/Fade";
 import interviewCopilotImg from "../../assets/images/project-interviewcopilot.png";
 import whatsappAnalyzerImg from "../../assets/images/project-whatsapp-analyzer.png";
 import churnMlopsImg from "../../assets/images/project-churn-mlops.png";
@@ -67,7 +67,7 @@ const Projects = () => {
         </p>
         {/* card design */}
         <div className="row" id="ads">
-          <Spin>
+          <Fade bottom cascade>
             {projects.map((project) => (
               <div className="col-md-4" key={project.id}>
                 <div className="card rounded">
@@ -101,7 +101,7 @@ const Projects = () => {
                 </div>
               </div>
             ))}
-          </Spin>
+          </Fade>
         </div>
       </div>
     </>
