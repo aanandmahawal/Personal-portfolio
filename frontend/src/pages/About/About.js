@@ -1,4 +1,3 @@
-```jsx
 import React from "react";
 import "./About.css";
 import Jump from "react-reveal/Jump";
@@ -42,4 +41,3 @@ const About = () => {
 };
 
 export default About;
-```
