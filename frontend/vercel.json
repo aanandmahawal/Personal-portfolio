@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://REPLACE-WITH-YOUR-BACKEND.vercel.app/api/$1"
+      "destination": "https://personal-portfolio-backend-mauve.vercel.app/"
     }
   ]
 }
