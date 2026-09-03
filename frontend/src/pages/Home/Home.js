@@ -42,20 +42,13 @@ const Home = () => {
           </Fade>
           <Fade bottom>
             <div className="home-buttons">
-              <a
-                className="btn btn-hire"
-                href="mailto:aanandmahawal048@gmail.com"
-                rel="noreferrer"
-                target="_blank"
-              >
-                Hire Me
-              </a>
+              
               <a
                 className="btn btn-cv"
                 href={Resume}
                 download="Aanand_Mahawal_Resume.pdf"
               >
-                My Resume
+                Download Resume
               </a>
             </div>
           </Fade>
