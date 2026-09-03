@@ -1,7 +1,9 @@
+```jsx
 import React from "react";
 import "./About.css";
 import Jump from "react-reveal/Jump";
 // import profilePic from "../../assets/images/profile.jpg";
+
 const About = () => {
   return (
     <>
@@ -9,8 +11,9 @@ const About = () => {
         <div className="about" id="about">
           <div className="row">
             <div className="col-md-6 col-xl-6 col-lg-6 col-xs-12 about-img">
-              // <img src={profilePic} alt="profile_pic" />
+              {/* <img src={profilePic} alt="profile_pic" /> */}
             </div>
+
             <div className="col-md-6 col-xl-6 col-lg-6 col-xs-12 about-content">
               <h1>About me</h1>
               <p>
@@ -39,3 +42,4 @@ const About = () => {
 };
 
 export default About;
+```
