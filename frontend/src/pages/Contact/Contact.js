@@ -1,40 +1,23 @@
-import React, { useState } from "react";
-import { toast } from "react-toastify";
-import axios from "axios";
+import React from "react";
 import "./Contact.css";
 import Rotate from "react-reveal/Rotate";
 import LightSpeed from "react-reveal/LightSpeed";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
-const Contact = () => {
-  const [name, setname] = useState("");
-  const [email, setEmail] = useState("");
-  const [msg, setMsg] = useState("");
+import { BsGithub, BsLinkedin, BsWhatsapp } from "react-icons/bs";
 
-  //handle submit button
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      if (!name || !email || !msg) {
-        toast.error("PLease Provide all fields");
-      }
-      const res = await axios.post("/api/v1/portfolio/sendEmail", {
-        name,
-        email,
-        msg,
-      });
-      //validation success
-      if (res.data.success) {
-        toast.success(res.data.message);
-        setname("");
-        setEmail("");
-        setMsg("");
-      } else {
-        toast.error(res.data.message);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+// ====================================================================
+//  WRITE YOUR WHATSAPP NUMBER HERE (country code + number, digits only)
+//  Example for India: 919876543210  (91 = country code, then 10 digits)
+// ====================================================================
+const WHATSAPP_NUMBER = "918396091712";
+
+// Pre-filled message the visitor's WhatsApp opens with (edit freely)
+const WHATSAPP_MESSAGE =
+  "Hi Aanand! I saw your portfolio and would like to connect.";
+
+const Contact = () => {
+  const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    WHATSAPP_MESSAGE
+  )}`;
 
   return (
     <>
@@ -47,7 +30,7 @@ const Contact = () => {
                   <LightSpeed>
                     <img
                       src="https://img.freepik.com/free-photo/hot-line-contact-us-call-center-search-interface_53876-124009.jpg?w=2000"
-                      alt="ocontact"
+                      alt="contact"
                       className="image"
                     />
                   </LightSpeed>
@@ -85,40 +68,33 @@ const Contact = () => {
                       <small className="or text-center">OR</small>
                       <div className="line" />
                     </div>
-                    <div className="row px-3">
-                      <input
-                        type="text"
-                        name="name"
-                        placeholder="Enter your Name"
-                        className="mb-3"
-                        value={name}
-                        onChange={(e) => setname(e.target.value)}
-                      />
-                    </div>
-                    <div className="row px-3">
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="Enter Your Email Address"
-                        className="mb-3"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                      />
-                    </div>
-                    <div className="row px-3">
-                      <textarea
-                        type="text"
-                        name="msg"
-                        placeholder="Write your message"
-                        className="mb-3"
-                        value={msg}
-                        onChange={(e) => setMsg(e.target.value)}
-                      />
-                    </div>
-                    <div className="row px-3">
-                      <button className="button" onClick={handleSubmit}>
-                        SEND MESSAGE
-                      </button>
+
+                    <div className="whatsapp-box text-center">
+                      <a
+                        href={whatsappLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="whatsapp-icon-wrap"
+                        aria-label="Chat on WhatsApp"
+                      >
+                        <BsWhatsapp className="whatsapp-icon" />
+                      </a>
+                      <h5 className="whatsapp-title">
+                        Let&apos;s talk on WhatsApp
+                      </h5>
+                      <p className="whatsapp-subtitle">
+                        Fastest way to reach me - I usually reply within a few
+                        hours.
+                      </p>
+                      <a
+                        href={whatsappLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="whatsapp-btn"
+                      >
+                        <BsWhatsapp size={20} className="me-2" />
+                        WhatsApp Me
+                      </a>
                     </div>
                   </div>
                 </div>
