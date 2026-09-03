@@ -13,7 +13,7 @@ const Techstack = () => {
           </h2>
           <hr />
           <p className="pb-3 text-center">
-            👉 Machine Learning, Deep Learning, Generative AI, data tools and
+            Machine Learning, Deep Learning, Generative AI, data tools and
             deployment stack I work with
           </p>
         </RubberBand>
