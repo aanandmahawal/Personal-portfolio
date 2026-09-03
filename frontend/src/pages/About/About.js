@@ -1,7 +1,7 @@
 import React from "react";
 import "./About.css";
 import Jump from "react-reveal/Jump";
-import profilePic from "../../assets/images/profile.jpg";
+// import profilePic from "../../assets/images/profile.jpg";
 const About = () => {
   return (
     <>
