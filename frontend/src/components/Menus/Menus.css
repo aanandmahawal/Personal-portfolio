@@ -1,11 +1,6 @@
-.navbar-profile-pic img {
-  border-radius: 90px;
-  height: 150px;
-  width: 150px;
-  display: flex;
-  vertical-align: middle;
-  margin: 0 auto;
-  /* margin-top: 20px; */
+/* sidebar image removed - nav starts right below the toggle */
+.nav-items {
+  margin-top: 10px;
 }
 
 .nav-item {
