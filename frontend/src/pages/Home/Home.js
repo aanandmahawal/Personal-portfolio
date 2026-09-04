@@ -58,6 +58,10 @@ const Home = () => {
                 Download Resume
               </a>
             </div>
+            <p className="home-roles">
+              Machine Learning <span>|</span> Generative AI <span>|</span>{" "}
+              Data Science <span>|</span> MLOps
+            </p>
           </Fade>
         </div>
       </div>
