@@ -24,7 +24,7 @@ const Techstack = () => {
                 <div className="card m-2">
                   <div className="card-content">
                     <div className="card-body">
-                      <div className="media d-flex justify-content-center">
+                      <div className="media d-flex align-items-center tech-row">
                         {tech.icon && (
                           <div className="alig-self-center">
                             <tech.icon className="tech-icon" />
