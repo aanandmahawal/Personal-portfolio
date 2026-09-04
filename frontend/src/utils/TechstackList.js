@@ -6,12 +6,11 @@ import {
   SiTensorflow,
   SiPandas,
   SiDocker,
-  SiMysql,
   SiGithub,
   SiLeetcode,
 } from "react-icons/si";
 import { GiArtificialIntelligence } from "react-icons/gi";
-import { FaRobot } from "react-icons/fa";
+import { FaRobot, FaDatabase } from "react-icons/fa";
 
 // icon is optional - items without a matching real-world logo simply omit it
 export const TechstackList = [
@@ -68,7 +67,7 @@ export const TechstackList = [
   {
     _id: 11,
     name: "SQL",
-    icon: SiMysql,
+    icon: FaDatabase,
   },
   {
     _id: 12,
