@@ -46,3 +46,15 @@
     width: 280px;
   }
 }
+
+/* ===== consistent left-aligned rows ===== */
+.techstack .tech-row {
+  justify-content: flex-start; /* icon + name always start from the left */
+  text-align: left;
+  padding-left: 6px;
+}
+
+.techstack .media-body h5 {
+  margin-bottom: 0; /* keeps the name vertically centered beside the icon */
+  font-size: 1.05rem;
+}
