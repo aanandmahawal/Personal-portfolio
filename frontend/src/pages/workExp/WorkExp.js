@@ -1,5 +1,5 @@
 import React from "react";
-import { SiPython } from "react-icons/si";
+import { SiArduino } from "react-icons/si";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -24,7 +24,7 @@ const WorkExp = () => {
               }}
               date="June 2025 - July 2025"
               iconStyle={{ background: "#1e1e2c", color: "#fff" }}
-              icon={<SiPython />}
+              icon={<SiArduino />}
             >
               <h3 className="vertical-timeline-element-title">
                 Research Intern
@@ -33,9 +33,11 @@ const WorkExp = () => {
                 NIT Kurukshetra
               </h4>
               <p>
-                Engineered a secure encryption-decryption pipeline, showcasing
-                innovation in lightweight cryptographic design for secure
-                communication systems.
+                Implemented the Affine lightweight cipher on an Arduino UNO,
+                building a complete encryption-decryption pipeline for secure
+                communication on resource-constrained hardware. Validated the
+                encrypted output with NIST statistical tests for randomness,
+                entropy, and distribution quality.
               </p>
             </VerticalTimelineElement>
           </VerticalTimeline>
