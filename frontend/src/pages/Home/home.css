@@ -20,16 +20,17 @@
   margin-top: 20px;
 }
 
-.home-buttons .btn-hire {
-  background-color: #3b8ff3;
-  color: white;
+.home-buttons .btn-view {
+  background-color: transparent;
+  color: #f29f67;
+  border: 2px solid #f29f67;
   width: 160px;
+  transition: all 0.3s ease;
 }
-.home-buttons .btn-hire:hover {
-  background-color: white;
-  color: #3b8ff3;
-  width: 200px;
-  transition: 1s;
+.home-buttons .btn-view:hover {
+  background-color: #f29f67;
+  color: white;
+  transform: translateY(-2px);
 }
 
 .home-buttons .btn-cv {
