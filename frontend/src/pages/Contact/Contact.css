@@ -24,15 +24,32 @@
 }
 .line {
   height: 1px;
-  width: 45%;
   background-color: #e0e0e0;
-  margin-top: 10px;
 }
 
 .or {
-  display: flex;
-  width: 10%;
   font-weight: bold;
+}
+
+/* one-line divider: [----] OR FIND ME ON [----] */
+.contact-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 8px;
+}
+
+.contact-divider .line {
+  flex: 1; /* the two lines share the leftover space */
+  margin: 0;
+}
+
+.contact-divider .or {
+  flex: 0 0 auto;
+  white-space: nowrap; /* the text never wraps */
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: #8a8f98;
 }
 
 ::placeholder {
