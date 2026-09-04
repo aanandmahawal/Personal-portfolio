@@ -18,8 +18,10 @@
 }
 
 .techstack .tech-icon {
-  font-size: 2rem;
+  width: 2.2rem;
+  height: 2.2rem; /* fixed box - every logo renders the same size */
   margin-right: 10px;
+  flex-shrink: 0;
 }
 
 .techstack .card:hover {
