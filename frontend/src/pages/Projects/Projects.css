@@ -175,3 +175,20 @@
     font-size: 12px;
   }
 }
+
+/* ===== row spacing & equal-height cards (fixes 2nd-row merge) ===== */
+.project #ads [class*="col-"] {
+  margin-bottom: 30px; /* clear gap between card rows */
+  display: flex; /* lets the card stretch to the row's tallest card */
+}
+
+.project #ads .card {
+  width: 100%;
+  height: 100%; /* every card in a row gets the same height */
+  display: flex;
+  flex-direction: column;
+}
+
+.project #ads .card .card-body {
+  margin-top: auto; /* pins title + View button to the bottom edge */
+}
