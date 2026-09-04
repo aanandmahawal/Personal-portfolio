@@ -1,6 +1,19 @@
 .sidebar-section {
   display: flex;
-  background-color: black;
+  /* soft lavender-to-cream wash with warm glows (inspired reference card) */
+  background-color: #efe9f0;
+  background-image: radial-gradient(
+      circle at 85% 8%,
+      rgba(190, 168, 220, 0.35),
+      transparent 46%
+    ),
+    radial-gradient(
+      circle at 10% 95%,
+      rgba(242, 159, 103, 0.28),
+      transparent 42%
+    ),
+    linear-gradient(135deg, #e9e3f0 0%, #f6f1ea 55%, #ecdacd 100%);
+  border-bottom: 4px solid #f29f67;
 }
 
 .sidebar {
