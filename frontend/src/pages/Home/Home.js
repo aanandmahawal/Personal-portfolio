@@ -42,7 +42,14 @@ const Home = () => {
           </Fade>
           <Fade bottom>
             <div className="home-buttons">
-              
+              <a
+                className="btn btn-view"
+                href={Resume}
+                target="_blank"
+                rel="noreferrer"
+              >
+                View Resume
+              </a>
               <a
                 className="btn btn-cv"
                 href={Resume}
