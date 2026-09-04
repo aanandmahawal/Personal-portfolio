@@ -3,9 +3,7 @@ import {
   SiScikitlearn,
   SiTensorflow,
   SiPandas,
-  SiFastapi,
   SiDocker,
-  SiMongodb,
   SiMysql,
   SiGithub,
 } from "react-icons/si";
