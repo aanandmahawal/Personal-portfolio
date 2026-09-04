@@ -1,56 +1,95 @@
-.sidebar-section {
-  display: flex;
-  position: relative; /* anchors the animated particle canvas */
-  overflow: hidden;
-  /* Hanya-style backdrop: warm grey-taupe wash (mesh is now animated) */
-  background-color: #d2d0d0;
-  background-image: radial-gradient(
-      circle at 82% 20%,
-      rgba(199, 179, 165, 0.9),
-      rgba(199, 179, 165, 0) 55%
-    ),
-    linear-gradient(120deg, #d2ced6 0%, #d2d0d0 45%, #cdbcae 100%);
-  border-bottom: 4px solid #f29f67;
-}
+import React, { useEffect, useRef } from "react";
 
-.particle-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none; /* clicks pass straight through to the page */
-}
+// Animated constellation: drifting dots joined by faint lines.
+// Pure canvas - no extra npm packages needed.
+const PARTICLE_COUNT = 30;
+const LINK_DISTANCE = 150; // px - draw a line when two dots are closer than this
+const DOT_COLOR = "107, 95, 107"; // muted mauve-grey (rgb)
 
-.sidebar-section > .container {
-  position: relative;
-  z-index: 1; /* hero text and buttons stay above the animation */
-}
+const ParticleBackground = () => {
+  const canvasRef = useRef(null);
 
-.sidebar {
-  height: 100vh;
-  background-color: #1e1e2c;
-  width: 90px;
-  position: fixed;
-}
-.sidebar-toggle {
-  width: 200px;
-}
-.sidebar-toggle-icons {
-  display: flex;
-  align-items: right;
-  justify-content: right;
-  cursor: pointer;
-}
-.sidebar-toggle-icons p svg {
-  background-color: #f29f67;
-  color: white;
-  margin-top: 10px;
-}
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    let animationId;
+    let particles = [];
 
-/* ==== MOBILE VIEW ========== */
-@media (max-width: 600px) {
-  .sidebar {
-    display: none;
-  }
-}
+    const parent = canvas.parentElement;
+
+    const resize = () => {
+      canvas.width = parent.offsetWidth;
+      canvas.height = parent.offsetHeight;
+    };
+
+    const createParticles = () => {
+      particles = Array.from({ length: PARTICLE_COUNT }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.5, // slow random drift
+        vy: (Math.random() - 0.5) * 0.5,
+        r: 1.8 + Math.random() * 1.4,
+      }));
+    };
+
+    const step = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // move dots
+      for (const p of particles) {
+        p.x += p.vx;
+        p.y += p.vy;
+        // bounce softly off the edges
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+      }
+
+      // connecting lines
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < LINK_DISTANCE) {
+            const alpha = 0.16 * (1 - dist / LINK_DISTANCE);
+            ctx.strokeStyle = `rgba(${DOT_COLOR}, ${alpha})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // dots
+      for (const p of particles) {
+        ctx.fillStyle = `rgba(${DOT_COLOR}, 0.35)`;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      animationId = requestAnimationFrame(step);
+    };
+
+    resize();
+    createParticles();
+    step();
+
+    const handleResize = () => {
+      resize();
+      createParticles();
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      cancelAnimationFrame(animationId);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  return <canvas ref={canvasRef} className="particle-canvas" />;
+};
+
+export default ParticleBackground;
