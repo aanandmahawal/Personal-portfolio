@@ -13,6 +13,7 @@ const projects = [
     badge: "Multi-Agent AI",
     tags: ["LangGraph", "LangChain", "RAG", "Groq"],
     image: interviewCopilotImg,
+    imageFit: "cover",
     alt: "InterviewCopilot - AI resume and interview preparation",
     link: "https://interviewcopilot-myhzrad3k5n8dgprr4zeye.streamlit.app/",
     description:
@@ -24,6 +25,7 @@ const projects = [
     badge: "AI Agent",
     tags: ["Tool-Calling LLM", "Pandas", "TF-IDF"],
     image: whatsappAnalyzerImg,
+    imageFit: "contain",
     alt: "WhatsApp Chat Analyzer with tool-calling AI agent",
     link: "https://whatsapp-chat-analysis-ai-2udcolva34j9shwwuxlmv8.streamlit.app/",
     description:
@@ -35,6 +37,7 @@ const projects = [
     badge: "AI Healthcare",
     tags: ["XGBoost", "Groq Chatbot", "Streamlit"],
     image: riskcareImg,
+    imageFit: "contain",
     alt: "RiskCare - ICU risk prediction and medical AI assistant",
     link: "https://ai-powered-icu-risk-prediction-healthcare-assistant-ayv3bdhwnk.streamlit.app/",
     description:
@@ -46,6 +49,7 @@ const projects = [
     badge: "End-to-End MLOps",
     tags: ["Random Forest", "FastAPI", "Docker"],
     image: churnMlopsImg,
+    imageFit: "cover",
     alt: "End-to-end MLOps customer churn platform",
     link: "https://end-to-end-mlops-customer-churn-platform-vzusimhxbgchrasmnkgud.streamlit.app/",
     description:
@@ -73,7 +77,11 @@ const Projects = () => {
                 <div className="card rounded">
                   <div className="card-image">
                     <span className="card-notify-badge">{project.badge}</span>
-                    <img src={project.image} alt={project.alt} />
+                    <img
+                      src={project.image}
+                      alt={project.alt}
+                      className={"fit-" + (project.imageFit || "cover")}
+                    />
                     <div className="card-hover-overlay">
                       <p>{project.description}</p>
                     </div>
