@@ -45,26 +45,16 @@ export const TechstackList = [
   },
   {
     _id: 7,
-    name: "FastAPI / Streamlit",
-    icon: SiFastapi,
-  },
-  {
-    _id: 8,
     name: "Docker / MLOps",
     icon: SiDocker,
   },
   {
-    _id: 9,
-    name: "MongoDB / MySQL",
-    icon: SiMongodb,
-  },
-  {
-    _id: 10,
+    _id: 8,
     name: "SQL",
     icon: SiMysql,
   },
   {
-    _id: 11,
+    _id: 9,
     name: "Git / GitHub",
     icon: SiGithub,
   },
