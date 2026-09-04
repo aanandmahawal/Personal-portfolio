@@ -71,7 +71,7 @@ const Contact = () => {
                       </a>
                     </div>
 
-                    <div className="row px-3 my-4">
+                    <div className="contact-divider my-4">
                       <div className="line" />
                       <small className="or text-center">OR FIND ME ON</small>
                       <div className="line" />
