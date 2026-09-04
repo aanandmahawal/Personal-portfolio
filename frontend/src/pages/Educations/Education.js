@@ -27,6 +27,7 @@ const Education = () => {
             <h4 className="vertical-timeline-element-subtitle">
               NIT KURUKSHETRA
             </h4>
+            <p>CGPA: 8.51 / 10</p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
@@ -42,6 +43,7 @@ const Education = () => {
             <h4 className="vertical-timeline-element-subtitle">
               MODISH PUBLIC SCHOOL
             </h4>
+            <p>Percentage: 95%</p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
@@ -55,6 +57,7 @@ const Education = () => {
             <h4 className="vertical-timeline-element-subtitle">
               MODISH PUBLIC SCHOOL
             </h4>
+            <p>Percentage: 96%</p>
           </VerticalTimelineElement>
         </VerticalTimeline>
       </div>
