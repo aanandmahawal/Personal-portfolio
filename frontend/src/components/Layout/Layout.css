@@ -32,6 +32,14 @@
   background-color: #1e1e2c;
   width: 90px;
   position: fixed;
+  /* The hero container sits at z-index: 1 (to stay above the particle
+     canvas) and, being position:fixed ourselves, we were underneath it —
+     its transparent box swallowed clicks on the toggle chevron until the
+     page scrolled past the hero. One level above the hero (and below
+     nothing that overlaps us) makes the toggle clickable from the very
+     top, with zero visual change: the hero never painted anything in
+     this strip anyway, and the animated dots keep their own layer. */
+  z-index: 2;
 }
 .sidebar-toggle {
   width: 200px;
