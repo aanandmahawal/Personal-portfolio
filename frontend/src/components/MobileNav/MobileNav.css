@@ -3,7 +3,13 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1;
+  /* Same layering bug as the sidebar chevron, mobile edition: the hero
+     container sits at z-index: 1 and this bar was ALSO at 1 — a tie,
+     which the hero wins because it appears later in the page. So the
+     hamburger button was click-blocked while the hero was on screen.
+     Level 2 puts the menu above the hero but still below the floating
+     theme button (level 5), so nothing changes visually. */
+  z-index: 2;
 }
 
 .mobile-nav-header {
