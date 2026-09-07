@@ -5,7 +5,7 @@ import interviewCopilotImg from "../../assets/images/project-interviewcopilot.pn
 import whatsappAnalyzerImg from "../../assets/images/project-whatsapp-analyzer.png";
 import churnMlopsImg from "../../assets/images/project-churn-mlops.png";
 import riskcareImg from "../../assets/images/project-riskcare.png";
-import virtualAssistantImg from "../../assets/images/project-virtual-assistant.png";
+import virtualAssistantImg from "../../assets/images/project-virtual-assistant.jpeg";
 
 const projects = [
   {
