@@ -4,7 +4,7 @@ import Fade from "react-reveal/Fade";
 import interviewCopilotImg from "../../assets/images/project-interviewcopilot.png";
 import whatsappAnalyzerImg from "../../assets/images/project-whatsapp-analyzer.png";
 import churnMlopsImg from "../../assets/images/project-churn-mlops.png";
-import riskcareImg from "../../assets/images/project-riskcare.png";
+import riskcareImg from "../../assets/images/project-riskcare.jpg";
 import virtualAssistantImg from "../../assets/images/project-virtual-assistant.jpeg";
 
 const projects = [
