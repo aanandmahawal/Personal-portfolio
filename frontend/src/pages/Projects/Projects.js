@@ -5,6 +5,7 @@ import interviewCopilotImg from "../../assets/images/project-interviewcopilot.pn
 import whatsappAnalyzerImg from "../../assets/images/project-whatsapp-analyzer.png";
 import churnMlopsImg from "../../assets/images/project-churn-mlops.png";
 import riskcareImg from "../../assets/images/project-riskcare.png";
+import virtualAssistantImg from "../../assets/images/project-virtual-assistant.png";
 
 const projects = [
   {
@@ -54,6 +55,18 @@ const projects = [
     link: "https://end-to-end-mlops-customer-churn-platform-vzusimhxbgchrasmnkgud.streamlit.app/",
     description:
       "A modular MLOps pipeline on the IBM Telco dataset - preprocessing to inference - served through a Dockerized FastAPI API with a live retention-analytics dashboard.",
+  },
+  {
+    id: 5,
+    title: "Virtual Assistant",
+    badge: "Voice AI",
+    tags: ["MERN Stack", "Groq LLM", "Web Speech"],
+    image: virtualAssistantImg,
+    imageFit: "cover",
+    alt: "Virtual Assistant - voice-controlled AI assistant built on the MERN stack",
+    link: "https://virtual-assistant-0dz3.onrender.com/",
+    description:
+      "A voice-controlled assistant you name and customise. Spoken commands flow through an LLM intent engine that answers aloud, runs Google and YouTube searches, and tells time, date and weather.",
   },
 ];
 
